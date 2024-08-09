@@ -12,6 +12,7 @@ const API_URL: string = `https://api.coingecko.com/api/v3/simple/price?ids=${tok
 async function getSolanaPrice(): Promise<number | null> {
   try {
     const response: Response = await fetch(API_URL);
+
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }

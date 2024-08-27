@@ -1,7 +1,11 @@
 {
-	"dependencies": {
-		"@solana/web3.js": "^1.95.2",
-		"axios": "^1.7.3",
-		"node-fetch": "^3.3.2"
-	}
+  "dependencies": {
+    "@cetusprotocol/cetus-sui-clmm-sdk": "^5.1.2",
+    "@mysten/sui": "^1.6.0",
+    "@solana/web3.js": "^1.95.2",
+    "axios": "^1.7.3",
+    "bn.js": "^5.2.1",
+    "node-fetch": "^3.3.2",
+    "zx": "^8.1.4"
+  }
 }

@@ -1,4 +1,5 @@
 #!/usr/bin/env zx
+import { schedule } from 'node-cron';
 
 import { $, chalk } from 'zx';
 import puppeteer from 'puppeteer';
@@ -54,4 +55,16 @@ async function fetchDebankProfileAndSaveData() {
   }
 }
 
+// Schedule the task to run every hour
+schedule('0 * * * *', () => {
+  const currentTime = new Date().toLocaleString();
+  console.log(
+    chalk.yellow(`Running scheduled DeBank profile check at ${currentTime}...`)
+  );
+  fetchDebankProfileAndSaveData();
+});
+
+// Initial run
 fetchDebankProfileAndSaveData();
+
+console.log(chalk.blue('DeBank profile check scheduled to run every hour.'));

@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <style>
+    /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+    /* Document   ========================================================================== */
+    /** * 1. Correct the line height in all browsers. * 2. Prevent adjustments of font size after orientation changes in iOS. */
+    @media print {
+      figure {
+        display: block !important;
+      }
+
+      table {
+        page-break-inside: auto !important;
+        page-break-before: avoid !important;
+      }
+    }
+
+    html {
+      line-height: 1.15;
+      /* 1 */
+      -webkit-text-size-adjust: 100%;
+      /* 2 */
+    }
+
+    p {
+      word-break: break-word;
+    }
+
+    /* Sections   ========================================================================== */
+    /** * Remove the margin in all browsers. */
+    body {
+      margin: 0;
+    }
+
+    /** * Render the 'main' element consistently in IE. */
+    main {
+      display: block;
+    }
+
+    /** * Correct the font size and margin on 'h1' elements within 'section' and * 'article' contexts in Chrome, Firefox, and Safari. */
+    h1 {
+      font-size: 2em;
+      margin: 0.67em 0;
+    }
+
+    /* Grouping content   ========================================================================== */
+    /** * 1. Add the correct box sizing in Firefox. * 2. Show the overflow in Edge and IE. */
+    hr {
+      box-sizing: content-box;
+      /* 1 */
+      height: 0;
+      /* 1 */
+      overflow: visible;
+      /* 2 */
+    }
+
+    /** * 1. Correct the inheritance and scaling of font size in all browsers. * 2. Correct the odd 'em' font sizing in all browsers. */
+    pre {
+      font-family: monospace, monospace;
+      /* 1 */
+      font-size: 1em;
+      /* 2 */
+    }
+
+    thead {
+      display: table-row-group !important;
+    }
+
+    /* Text-level semantics   ========================================================================== */
+    /** * Remove the gray background on active links in IE 10. */
+    a {
+      background-color: transparent;
+    }
+
+    /** * 1. Remove the bottom border in Chrome 57- * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari. */
+    abbr[title] {
+      border-bottom: none;
+      /* 1 */
+      text-decoration: underline;
+      /* 2 */
+      text-decoration: underline dotted;
+      /* 2 */
+    }
+
+    /** * Add the correct font weight in Chrome, Edge, and Safari. */
+    b,
+    strong {
+      font-weight: bolder;
+    }
+
+    /** * 1. Correct the inheritance and scaling of font size in all browsers. * 2. Correct the odd 'em' font sizing in all browsers. */
+    code,
+    kbd,
+    samp {
+      font-family: monospace, monospace;
+      /* 1 */
+      font-size: 1em;
+      /* 2 */
+    }
+
+    /** * Add the correct font size in all browsers. */
+    small {
+      font-size: 80%;
+    }
+
+    /** * Prevent 'sub' and 'sup' elements from affecting the line height in * all browsers. */
+    sub,
+    sup {
+      font-size: 75%;
+      line-height: 0;
+      position: relative;
+      vertical-align: baseline;
+    }
+
+    sub {
+      bottom: -0.25em;
+    }
+
+    sup {
+      top: -0.5em;
+    }
+
+    /* Embedded content   ========================================================================== */
+    /** * Remove the border on images inside links in IE 10. */
+    img {
+      border-style: none;
+      object-fit: contain;
+      max-width: 100%;
+    }
+
+    /* Forms   ========================================================================== */
+    /** * 1. Change the font styles in all browsers. * 2. Remove the margin in Firefox and Safari. */
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+      font-family: inherit;
+      /* 1 */
+      font-size: 100%;
+      /* 1 */
+      line-height: 1.15;
+      /* 1 */
+      margin: 0;
+      /* 2 */
+    }
+
+    /** * Show the overflow in IE. * 1. Show the overflow in Edge. */
+    button,
+    input {
+      /* 1 */
+      overflow: visible;
+    }
+
+    /** * Remove the inheritance of text transform in Edge, Firefox, and IE. * 1. Remove the inheritance of text transform in Firefox. */
+    button,
+    select {
+      /* 1 */
+      text-transform: none;
+    }
+
+    /** * Correct the inability to style clickable types in iOS and Safari. */
+    button,
+    [type='button'],
+    [type='reset'],
+    [type='submit'] {
+      -webkit-appearance: button;
+    }
+
+    /** * Remove the inner border and padding in Firefox. */
+    button::-moz-focus-inner,
+    [type='button']::-moz-focus-inner,
+    [type='reset']::-moz-focus-inner,
+    [type='submit']::-moz-focus-inner {
+      border-style: none;
+      padding: 0;
+    }
+
+    /** * Restore the focus styles unset by the previous rule. */
+    button:-moz-focusring,
+    [type='button']:-moz-focusring,
+    [type='reset']:-moz-focusring,
+    [type='submit']:-moz-focusring {
+      outline: 1px dotted ButtonText;
+    }
+
+    /** * Correct the padding in Firefox. */
+    fieldset {
+      padding: 0.35em 0.75em 0.625em;
+    }
+
+    /** * 1. Correct the text wrapping in Edge and IE. * 2. Correct the color inheritance from 'fieldset' elements in IE. * 3. Remove the padding so developers are not caught out when they zero out *    'fieldset' elements in all browsers. */
+    legend {
+      box-sizing: border-box;
+      /* 1 */
+      color: inherit;
+      /* 2 */
+      display: table;
+      /* 1 */
+      max-width: 100%;
+      /* 1 */
+      padding: 0;
+      /* 3 */
+      white-space: normal;
+      /* 1 */
+    }
+
+    /** * Add the correct vertical alignment in Chrome, Firefox, and Opera. */
+    progress {
+      vertical-align: baseline;
+    }
+
+    /** * Remove the default vertical scrollbar in IE 10+. */
+    textarea {
+      overflow: auto;
+    }
+
+    /** * 1. Add the correct box sizing in IE 10. * 2. Remove the padding in IE 10. */
+    [type='checkbox'],
+    [type='radio'] {
+      box-sizing: border-box;
+      /* 1 */
+      padding: 0;
+      /* 2 */
+    }
+
+    /** * Correct the cursor style of increment and decrement buttons in Chrome. */
+    [type='number']::-webkit-inner-spin-button,
+    [type='number']::-webkit-outer-spin-button {
+      height: auto;
+    }
+
+    /** * 1. Correct the odd appearance in Chrome and Safari. * 2. Correct the outline style in Safari. */
+    [type='search'] {
+      -webkit-appearance: textfield;
+      /* 1 */
+      outline-offset: -2px;
+      /* 2 */
+    }
+
+    /** * Remove the inner padding in Chrome and Safari on macOS. */
+    [type='search']::-webkit-search-decoration {
+      -webkit-appearance: none;
+    }
+
+    /** * 1. Correct the inability to style clickable types in iOS and Safari. * 2. Change font properties to 'inherit' in Safari. */
+    ::-webkit-file-upload-button {
+      -webkit-appearance: button;
+      /* 1 */
+      font: inherit;
+      /* 2 */
+    }
+
+    /* Interactive   ========================================================================== */
+    /* * Add the correct display in Edge, IE 10+, and Firefox. */
+    details {
+      display: block;
+    }
+
+    /* * Add the correct display in all browsers. */
+    summary {
+      display: list-item;
+    }
+
+    /* Misc   ========================================================================== */
+    /** * Add the correct display in IE 10+. */
+    template {
+      display: none;
+    }
+
+    /** * Add the correct display in IE 10. */
+    [hidden] {
+      display: none;
+    }
+
+    .table .ck-table-resized {
+      table-layout: fixed;
+    }
+
+    table {
+      max-width: 100%;
+    }
+
+    .table {
+      margin: 0.9em auto;
+      max-width: 100%;
+
+      & table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        /* Table width and height are set on the parent <figure>. Make sure the table inside stretches\t\tto the full dimensions of the container (https://github.com/ckeditor/ckeditor5/issues/6186). */
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        /* The outer border of the table should be slightly darker than the inner lines.\t\tAlso see https://github.com/ckeditor/ckeditor5-table/issues/50. */
+        /* border: 1px double hsl(0, 0%, 70%); */
+        border: none;
+
+        & td,
+        & th {
+          min-width: 2em;
+          padding: 0.4em;
+          /* The border is inherited from .ck-editor__nested-editable styles, so theoretically it's not necessary here.\t\t\tHowever, the border is a content style, so it should use .ck-content (so it works outside the editor).\t\t\tHence, the duplication. See https://github.com/ckeditor/ckeditor5/issues/6314 */
+          /* border: 1px solid hsl(0, 0%, 75%); */
+          border: none;
+        }
+
+        & th {
+          font-weight: bold;
+          background: hsla(0, 0%, 0%, 5%);
+        }
+      }
+    }
+
+    .ck.ck-powered-by {
+      display: none;
+    }
+
+    html {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
+
+    p {
+      margin-block-start: 0;
+      margin-block-end: 0;
+      margin-inline-start: 0;
+      margin-inline-end: 0;
+    }
+
+    /* 设置页面Margin */
+    body {
+      width: 100%;
+    }
+
+    /* fix image */
+    .image {
+      display: table;
+      clear: both;
+      text-align: center;
+      margin: 0.9em auto;
+      min-width: 50px;
+    }
+
+    :root {
+      --ck-image-style-spacing: 1.5em;
+      --ck-inline-image-style-spacing: calc(var(--ck-image-style-spacing) / 2);
+    }
+
+    .image-style-block-align-left,
+    .image-style-block-align-right {
+      max-width: calc(100% - var(--ck-image-style-spacing));
+    }
+
+    .image-style-align-left,
+    .image-style-align-right {
+      clear: none;
+    }
+
+    .image-style-side {
+      float: right;
+      margin-left: var(--ck-image-style-spacing);
+      max-width: 50%;
+    }
+
+    image-style-align-left {
+      float: left;
+      margin-right: var(--ck-image-style-spacing);
+    }
+
+    .image-style-align-center {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .image-style-align-right {
+      float: right;
+      margin-left: var(--ck-image-style-spacing);
+    }
+
+    .image-style-block-align-right {
+      margin-right: 0;
+      margin-left: auto;
+    }
+
+    .image-style-block-align-left {
+      margin-left: 0;
+      margin-right: auto;
+    }
+
+    p+.image-style-align-left,
+    p+.image-style-align-right,
+    p+.image-style-side {
+      margin-top: 0;
+    }
+
+    .image-inline.image-style-align-left,
+    .image-inline.image-style-align-right {
+      margin-top: var(--ck-inline-image-style-spacing);
+      margin-bottom: var(--ck-inline-image-style-spacing);
+    }
+
+    .image-inline.image-style-align-left {
+      margin-right: var(--ck-inline-image-style-spacing);
+    }
+
+    .image-inline.image-style-align-right {
+      margin-left: var(--ck-inline-image-style-spacing);
+    }
+
+    img.image_resized {
+      height: auto;
+    }
+
+    .image.image_resized {
+      max-width: 100%;
+      display: block;
+      box-sizing: border-box;
+    }
+
+    .image.image_resized img {
+      width: 100%;
+    }
+
+    .image.image_resized>figcaption {
+      display: block;
+    }
+
+    thead {
+      display: table-header-group;
+    }
+
+    tfoot {
+      display: table-footer-group;
+    }
+
+    @counter-style x-editor-custom-list-style-2- {
+      system: numeric;
+      symbols: '0' '1' '2' '3' '4' '5' '6' '7' '8' '9';
+      prefix: '1.';
+    }
+
+    @counter-style x-editor-custom-list-style-2- {
+      system: numeric;
+      symbols: '0' '1' '2' '3' '4' '5' '6' '7' '8' '9';
+      prefix: '2.';
+    }
+
+    @counter-style x-editor-custom-list-style-3- {
+      system: numeric;
+      symbols: '0' '1' '2' '3' '4' '5' '6' '7' '8' '9';
+      prefix: '3.';
+    }
+
+    @counter-style x-editor-custom-list-style-4- {
+      system: numeric;
+      symbols: '0' '1' '2' '3' '4' '5' '6' '7' '8' '9';
+      prefix: '4.';
+    }
+
+    @counter-style x-editor-custom-list-style-5- {
+      system: numeric;
+      symbols: '0' '1' '2' '3' '4' '5' '6' '7' '8' '9';
+      prefix: '5.';
+    }
+
+    @counter-style x-editor-custom-list-style-6- {
+      system: numeric;
+      symbols: '0' '1' '2' '3' '4' '5' '6' '7' '8' '9';
+      prefix: '6.';
+    }
+
+    @counter-style x-editor-custom-list-style-7- {
+      system: numeric;
+      symbols: '0' '1' '2' '3' '4' '5' '6' '7' '8' '9';
+      prefix: '7.';
+    }
+
+    @counter-style x-editor-custom-list-style-8- {
+      system: numeric;
+      symbols: '0' '1' '2' '3' '4' '5' '6' '7' '8' '9';
+      prefix: '8.';
+    }
+
+    @counter-style x-editor-custom-list-style-9- {
+      system: numeric;
+      symbols: '0' '1' '2' '3' '4' '5' '6' '7' '8' '9';
+      prefix: '9.';
+    }
+
+    @counter-style x-editor-custom-list-style-10- {
+      system: numeric;
+      symbols: '0' '1' '2' '3' '4' '5' '6' '7' '8' '9';
+      prefix: '10.';
+    }
+  </style>
+  <style> </style>
+  <style id='x-editor-custom-style-sheet'> </style>
+</head>
+
+<body>
+  <p style="line-height:1.2;margin-bottom:6pt;margin-top:0pt;" dir="ltr"><span
+      style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+        style="font-variant:normal;text-decoration:none;vertical-align:baseline;"><strong>วันที่/Date</strong></span><span
+        style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">:</span><span
+        class="Apple-tab-span"
+        style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;white-space:pre;">
+        &nbsp;</span></span><span
+      style="color:hsl(0,0%,0%);font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+        lang="EN-US"><strong>{{.weekday_of_local}} {{.day}} {{.month_of_local}} {{.year}}
+          /&nbsp;</strong></span><strong>{{.weekday}} {{.day}} {{.month}} {{.year}}</strong></span></p>
+  <p style="line-height:1.2;margin-bottom:6pt;margin-top:0pt;" dir="ltr"><span
+      style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+        style="font-variant:normal;text-decoration:none;vertical-align:baseline;"><strong>เรื่อง/Subject</strong></span><span
+        style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">:
+        &nbsp;</span><span
+        style="font-variant:normal;text-decoration:none;vertical-align:baseline;"><strong>วงเงินสินเชื่อประเภทชั่วคราวของสัญญาให้สินเชื่อเงินกู้
+          SPayLater&nbsp;(</strong></span><span
+        style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">“</span><span
+        style="font-variant:normal;text-decoration:none;vertical-align:baseline;"><strong>สัญญากู้</strong></span><span
+        style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">”)/</span><span
+        style="font-variant:normal;text-decoration:none;vertical-align:baseline;"><strong>
+          Temporary Credit Limit under the Revolving Credit Facility Agreement SPayLater (the “Loan
+          Agreement”)</strong></span></span></p>
+  <p style="line-height:1.2;margin-bottom:0pt;margin-top:0pt;" dir="ltr"><span
+      style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+        style="font-variant:normal;text-decoration:none;vertical-align:baseline;"><strong>เรียน/Dear:
+          &nbsp;ผู้กู้/Borrower</strong></span></span></p>
+  <p>&nbsp;</p>
+  <p style="line-height:1.2;margin-bottom:0pt;margin-top:0pt;" dir="ltr"><span
+      style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+        style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">บริษัท
+        ซีมันนี่ (แคปปิตอล) จำกัด (ในฐานะผู้ให้กู้)
+        ขอเรียนให้ท่านทราบว่าผู้ให้กู้ได้พิจารณาให้วงเงินสินเชื่อประเภทชั่วคราวท่าน ทั้งนี้
+        ตามข้อตกลงและเงื่อนไขการใช้บริการ&nbsp;SPayLater และสัญญากู้
+        โดยรายละเอียดวงเงินสินเชื่อประเภทชั่วคราวตามสัญญากู้ปรากฏตามบันทึกเพิ่มเติมด้านล่างนี้
+        ซึ่งจะมีผลใช้บังคับตั้งแต่วันที่&nbsp;</span></span><span
+      style="color:hsl(0,0%,0%);font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+        lang="EN-US"><strong>{{.weekday_of_local}} {{.day}} {{.month_of_local}} {{.year}}</strong></span></span><span
+      style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+        style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">
+        และถือเป็นส่วนหนึ่งของสัญญากู้</span></span></p>
+  <p style="line-height:1.2;margin-bottom:0pt;margin-top:0pt;" dir="ltr"><span
+      style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+        style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">SeaMoney
+        (Capital) Co., Ltd. (as the lender) hereby notifies you that the Lender has considered the grant of temporary
+        Credit Limit in accordance with the Terms and Conditions of Services SPayLater and the Loan Agreement.&nbsp; The
+        details of the temporary Credit Limit under the Loan Agreement are set out in the Addendum below which shall
+        become effective from&nbsp;</span></span><span
+      style="color:hsl(0,0%,0%);font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><strong>{{.weekday}}
+        {{.day}} {{.month}} {{.year}}</strong></span><span
+      style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+        style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">
+        and shall form part of the Loan Agreement.</span></span></p>
+  <p>&nbsp;</p>
+  <p style="line-height:1.2;margin-bottom:0pt;margin-top:0pt;" dir="ltr"><span
+      style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+        style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">คำนิยามใดที่ใช้ในเอกสารฉบับนี้ให้มีความหมายตามที่ระบุในสัญญากู้&nbsp;เว้นแต่จะกำหนดไว้อย่างอื่นในบันทึกเพิ่มเติมด้านล่างนี้</span></span>
+  </p>
+  <p style="line-height:1.2;margin-bottom:0pt;margin-top:0pt;" dir="ltr"><span
+      style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+        style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">Capitalized
+        terms used herein shall have the respective meanings given to them in the Loan Agreement, unless otherwise
+        defined in the Addendum below.</span></span></p>
+  <p>&nbsp;</p>
+  <p style="line-height:1.2;margin-bottom:0pt;margin-left:-4.5pt;margin-top:0pt;text-align:center;" dir="ltr"><span
+      style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+        style="font-variant:normal;text-decoration:none;vertical-align:baseline;"><strong>บันทึกเพิ่มเติมสัญญาให้สินเชื่อเงินกู้
+          SPayLater</strong></span><span
+        style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">&nbsp;</span><span
+        style="font-variant:normal;text-decoration:none;vertical-align:baseline;"><strong>สำหรับวงเงินสินเชื่อประเภทชั่วคราว&nbsp;</strong></span><span
+        style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">(“</span><span
+        style="font-variant:normal;text-decoration:none;vertical-align:baseline;"><strong>บันทึกเพิ่มเติม</strong></span><span
+        style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">”)</span></span>
+  </p>
+  <p style="line-height:1.2;margin-bottom:0pt;margin-left:-4.5pt;margin-top:0pt;text-align:center;" dir="ltr"><span
+      style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+        style="font-variant:normal;text-decoration:none;vertical-align:baseline;"><strong>ADDENDUM
+          TO THE REVOLVING CREDIT FACILITY AGREEMENT SPayLater for Temporary Credit Limit (this
+          “Addendum”)</strong></span></span></p>
+  <p>&nbsp;</p>
+  <div dir="ltr" align="left">
+    <figure class="table" style="width:100%;">
+      <table class="ck-table-resized" style="border-collapse:collapse;border-style:none;">
+        <colgroup>
+          <col style="width:22.19%;" width="154">
+          <col style="width:28.67%;" width="174">
+          <col style="width:49.14%;" width="366">
+        </colgroup>
+        <tbody>
+          <tr style="height:9pt;">
+            <td
+              style="border-style:solid;border-width:1px;overflow-wrap:break-word;overflow:hidden;padding:0pt 5.75pt;vertical-align:top;"
+              colspan="2">
+              <p style="line-height:1.2;margin-bottom:0pt;margin-top:0pt;" dir="ltr"><span
+                  style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+                    style="font-variant:normal;text-decoration:none;vertical-align:baseline;"><strong>บันทึกเพิ่มเติม
+                      เลขที่/Addendum No.</strong></span><span
+                    style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">&nbsp;</span></span><span
+                  style="color:hsl(0,0%,0%);font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;">{{.appendix_no}}<span
+                    style="line-height:15.4px;" lang="EN-US">&nbsp;</span></span></p>
+            </td>
+            <td
+              style="border-style:solid;border-width:1px;overflow-wrap:break-word;overflow:hidden;padding:0pt 5.75pt;vertical-align:top;">
+              <p style="line-height:1.2;margin-bottom:0pt;margin-top:0pt;" dir="ltr"><span
+                  style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+                    style="font-variant:normal;text-decoration:none;vertical-align:baseline;"><strong>วันที่/Date:</strong></span><span
+                    style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">&nbsp;</span></span><span
+                  style="color:hsl(0,0%,0%);font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;">{{.weekday_of_local}}
+                  {{.day}} {{.month_of_local}} {{.year}} &nbsp;/ {{.weekday}} {{.day}} {{.month}} {{.year}}&nbsp;</span>
+              </p>
+            </td>
+          </tr>
+          <tr style="height:9pt;">
+            <td
+              style="border-style:solid;border-width:1px;overflow-wrap:break-word;overflow:hidden;padding:0pt 5.75pt;vertical-align:top;"
+              colspan="2">
+              <p style="line-height:1.2;margin-bottom:0pt;margin-top:0pt;" dir="ltr"><span
+                  style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+                    style="font-variant:normal;text-decoration:none;vertical-align:baseline;"><strong>ข้อมูลของผู้ให้กู้</strong></span><span
+                    style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">
+                    (“</span><span
+                    style="font-variant:normal;text-decoration:none;vertical-align:baseline;"><strong>ผู้ให้กู้</strong></span><span
+                    style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">”)</span><span
+                    style="font-variant:normal;text-decoration:none;vertical-align:baseline;"><strong>/Lender
+                      Information</strong></span><span
+                    style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">
+                    (“</span><span
+                    style="font-variant:normal;text-decoration:none;vertical-align:baseline;"><strong>Lender</strong></span><span
+                    style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">”)</span></span>
+              </p>
+              <p style="line-height:1.2;margin-bottom:0pt;margin-top:0pt;" dir="ltr"><span
+                  style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+                    style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">บริษัท
+                    ซีมันนี่ (แคปปิตอล) จำกัด/ SeaMoney (Capital) Co., Ltd.</span></span></p>
+              <p style="line-height:1.2;margin-bottom:0pt;margin-top:0pt;" dir="ltr"><span
+                  style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+                    style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">89
+                    อาคารเอไอเอ แคปปิตอล เซ็นเตอร์ ชั้น 24 ถนนรัชดาภิเษก&nbsp;</span></span></p>
+              <p style="line-height:1.2;margin-bottom:0pt;margin-top:0pt;" dir="ltr"><span
+                  style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+                    style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">แขวงดินแดง
+                    เขตดินแดง กรุงเทพมหานคร ประเทศไทย 10400/</span></span></p>
+              <p style="line-height:1.2;margin-bottom:0pt;margin-top:0pt;" dir="ltr"><span
+                  style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+                    style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">89
+                    AIA Capital Center Building, 24th Floor, Ratchadaphisek Road,&nbsp;</span></span></p>
+              <p style="line-height:1.2;margin-bottom:0pt;margin-top:0pt;" dir="ltr"><span
+                  style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+                    style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">Dindaeng
+                    Sub-district, Dindaeng District, Bangkok</span><span
+                    style="font-variant:normal;text-decoration:none;vertical-align:baseline;"><strong>,&nbsp;</strong></span><span
+                    style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">Thailand
+                    10400</span></span></p>
+              <p>&nbsp;</p>
+            </td>
+            <td
+              style="border-style:solid;border-width:1px;overflow-wrap:break-word;overflow:hidden;padding:0pt 5.75pt;vertical-align:top;">
+              <p style="line-height:1.2;margin-bottom:0pt;margin-top:0pt;" dir="ltr"><span
+                  style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+                    style="font-variant:normal;text-decoration:none;vertical-align:baseline;"><strong>ข้อมูลของผู้กู้&nbsp;</strong></span><span
+                    style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">(“</span><span
+                    style="font-variant:normal;text-decoration:none;vertical-align:baseline;"><strong>ผู้กู้</strong></span><span
+                    style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">”)/&nbsp;</span><span
+                    style="font-variant:normal;text-decoration:none;vertical-align:baseline;"><strong>Borrower
+                      Information (“Borrower”)</strong></span></span></p>
+              <p style="line-height:1.2;margin-bottom:0pt;margin-top:0pt;" dir="ltr"><span
+                  style="color:hsl(0,0%,0%);font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;">{{.user_name_local}}<span
+                    lang="EN-US">&nbsp;</span></span></p>
+              <p style="line-height:1.2;margin-bottom:0pt;margin-top:0pt;" dir="ltr"><span
+                  style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+                    style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">บัตรประจำตัวประชาชนเลขที่/
+                    Thai National Identity Card No.</span></span><span
+                  style="color:hsl(0,0%,0%);font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;">{{.id_card_no}}<span
+                    lang="EN-US">&nbsp;</span></span></p>
+              <p style="line-height:1.2;margin-bottom:0pt;margin-top:0pt;" dir="ltr"><span
+                  style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+                    style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">ที่อยู่ตามสำเนาทะเบียนบ้านอยู่ที่/Registered
+                    Address at&nbsp;</span></span><span
+                  style="color:hsl(0,0%,0%);font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;">{{.register_address}}<span
+                    lang="EN-US">&nbsp;</span></span></p>
+            </td>
+          </tr>
+          <tr style="height:0pt;">
+            <td
+              style="border-left-color:#000000;border-right-color:#000000;border-style:solid;border-top-color:#000000;border-width:1px;overflow-wrap:break-word;overflow:hidden;vertical-align:top;"
+              rowspan="3">
+              <p style="line-height:1.2;margin-bottom:0pt;margin-top:0pt;" dir="ltr"><span
+                  style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+                    style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">สัญญากู้/Loan
+                    Agreement</span></span></p>
+            </td>
+            <td style="border:1px solid #000000;overflow-wrap:break-word;overflow:hidden;vertical-align:top;">
+              <p style="line-height:1.2;margin-bottom:0pt;margin-top:0pt;" dir="ltr"><span
+                  style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+                    style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">สัญญาเลขที่</span><span
+                    style="font-variant:normal;text-decoration:none;vertical-align:baseline;"><strong>/</strong></span><span
+                    style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">Agreement
+                    No.</span></span></p>
+            </td>
+            <td
+              style="border-bottom-width:0.5pt;border-color:#000000;border-left-width:0.5pt;border-right-width:0.5pt;border-style:solid;border-top-width:1pt;overflow-wrap:break-word;overflow:hidden;padding:0pt 5.75pt;vertical-align:top;">
+              <p style="line-height:1.2;margin-bottom:0pt;margin-top:0pt;" dir="ltr"><span
+                  style="color:hsl(0,0%,0%);font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;">{{.contract_no}}<span
+                    style="line-height:15.4px;" lang="EN-US"><strong>&nbsp;</strong></span></span></p>
+            </td>
+          </tr>
+          <tr style="height:17.2pt;">
+            <td style="border:1px solid #000000;overflow-wrap:break-word;overflow:hidden;vertical-align:top;">
+              <p style="line-height:1.2;margin-bottom:0pt;margin-top:0pt;" dir="ltr"><span
+                  style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+                    style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">วันที่มีผลใช้บังคับของสัญญากู้/Effective
+                    Date of the Loan Agreement</span><span
+                    style="font-variant:normal;text-decoration:none;vertical-align:baseline;"><strong>&nbsp;</strong></span></span>
+              </p>
+            </td>
+            <td
+              style="border:0.5pt solid #000000;overflow-wrap:break-word;overflow:hidden;padding:0pt 5.75pt;vertical-align:top;">
+              <p style="line-height:1.2;margin-bottom:0pt;margin-top:0pt;" dir="ltr"><span
+                  style="color:hsl(0,0%,0%);font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;">{{.activate_weekday_of_local}}
+                  {{.activate_day}} {{.activate_month_of_local}} {{.activate_year}}<span style="line-height:15.4px;"
+                    lang="EN-US"><strong> /&nbsp;</strong></span>{{.activate_weekday}} {{.activate_day}}
+                  {{.activate_month}} {{.activate_year}}</span></p>
+            </td>
+          </tr>
+          <tr style="height:18.9pt;">
+            <td style="border:1px solid #000000;overflow-wrap:break-word;overflow:hidden;vertical-align:top;">
+              <p style="line-height:1.2;margin-bottom:0pt;margin-top:0pt;" dir="ltr"><span
+                  style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+                    style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">วงเงินสินเชื่อหลัก</span><span
+                    style="font-variant:normal;text-decoration:none;vertical-align:baseline;"><strong>/</strong></span><span
+                    style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">Existing
+                    Credit Limit</span></span></p>
+            </td>
+            <td
+              style="border:0.5pt solid #000000;overflow-wrap:break-word;overflow:hidden;padding:0pt 5.75pt;vertical-align:top;">
+              <p style="line-height:1.2;margin-bottom:0pt;margin-top:0pt;" dir="ltr"><span
+                  style="color:hsl(0,0%,0%);font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;">{{.credit_limit}}</span><span
+                  style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+                    style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">
+                    บาท/THB</span></span></p>
+            </td>
+          </tr>
+          <tr style="height:25.45pt;">
+            <td style="border:1pt solid black;" rowspan="3"><span
+                style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+                  style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">วงเงินสินเชื่อประเภทชั่วคราว</span><span
+                  style="font-variant:normal;text-decoration:none;vertical-align:baseline;"><strong>/</strong></span><span
+                  style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">&nbsp;Temporary
+                  Credit Limit</span></span></td>
+            <td style="border:1px solid #000000;overflow-wrap:break-word;overflow:hidden;vertical-align:top;">
+              <p style="line-height:1.2;margin-bottom:0pt;margin-top:0pt;" dir="ltr"><span
+                  style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+                    style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">วงเงินสินเชื่อประเภทชั่วคราว</span><span
+                    style="font-variant:normal;text-decoration:none;vertical-align:baseline;"><strong>/</strong></span><span
+                    style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">
+                    Temporary Credit Limit</span></span></p>
+            </td>
+            <td
+              style="border:0.5pt solid #000000;overflow-wrap:break-word;overflow:hidden;padding:0pt 5.75pt;vertical-align:top;">
+              <p style="line-height:1.2;margin-bottom:0pt;margin-top:0pt;" dir="ltr"><span
+                  style="color:hsl(0,0%,0%);font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;">{{.temp_limit}}&nbsp;</span><span
+                  style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+                    style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">บาท/THB</span></span>
+              </p>
+            </td>
+          </tr>
+          <tr style="height:17.2pt;">
+            <td style="border:1px solid #000000;overflow-wrap:break-word;overflow:hidden;vertical-align:top;">
+              <p style="line-height:1.2;margin-bottom:0pt;margin-top:0pt;" dir="ltr"><span
+                  style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+                    style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">วันที่เริ่มมีผลให้ใช้วงเงินสินเชื่อประเภทชั่วคราว</span><span
+                    style="font-variant:normal;text-decoration:none;vertical-align:baseline;"><strong>/</strong></span><span
+                    style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">
+                    Effective Date of the Temporary Credit Limit</span></span></p>
+            </td>
+            <td
+              style="border:0.5pt solid #000000;overflow-wrap:break-word;overflow:hidden;padding:0pt 5.75pt;vertical-align:top;">
+              <p style="line-height:1.2;margin-bottom:0pt;margin-top:0pt;" dir="ltr"><span
+                  style="color:hsl(0,0%,0%);font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;">{{.effective_weekday_of_local}}
+                  {{.effective_day}} {{.effective_month_of_local}} {{.effective_year}}<span style="line-height:15.4px;"
+                    lang="EN-US"><strong> /&nbsp;</strong></span>{{.effective_weekday}} {{.effective_day}}
+                  {{.effective_month}} {{.effective_year}}</span></p>
+            </td>
+          </tr>
+          <tr style="height:18.9pt;">
+            <td style="border:1px solid #000000;overflow-wrap:break-word;overflow:hidden;vertical-align:top;">
+              <p style="line-height:1.2;margin-bottom:0pt;margin-top:0pt;" dir="ltr"><span
+                  style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+                    style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">วันที่สิ้นสุดการให้ใช้วงเงินสินเชื่อประเภทชั่วคราว</span><span
+                    style="font-variant:normal;text-decoration:none;vertical-align:baseline;"><strong>/</strong></span><span
+                    style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">
+                    Expiry Date of the Temporary Credit Limit</span></span></p>
+            </td>
+            <td
+              style="border:0.5pt solid #000000;overflow-wrap:break-word;overflow:hidden;padding:0pt 5.75pt;vertical-align:top;">
+              <p style="line-height:1.2;margin-bottom:0pt;margin-top:0pt;" dir="ltr"><span
+                  style="color:hsl(0,0%,0%);font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;">{{.expiry_weekday_of_local}}
+                  {{.expiry_day}} {{.expiry_month_of_local}} {{.expiry_year}}<span style="line-height:15.4px;"
+                    lang="EN-US"><strong> /&nbsp;</strong></span>{{.expiry_weekday}} {{.expiry_day}} {{.expiry_month}}
+                  {{.expiry_year}}</span></p>
+            </td>
+          </tr>
+          <tr style="height:0pt;">
+            <td style="border:1px solid #000000;overflow-wrap:break-word;overflow:hidden;vertical-align:top;"
+              rowspan="6">
+              <p style="line-height:1.2;margin-bottom:0pt;margin-top:0pt;" dir="ltr"><span
+                  style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+                    style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">ข้อตกลงและเงื่อนไข</span><span
+                    style="font-variant:normal;text-decoration:none;vertical-align:baseline;"><strong>/</strong></span><span
+                    style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">&nbsp;</span></span>
+              </p>
+              <p style="line-height:1.2;margin-bottom:0pt;margin-top:0pt;" dir="ltr"><span
+                  style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+                    style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">Terms
+                    and Conditions</span></span></p>
+              <p>&nbsp;</p>
+            </td>
+            <td style="border:1px solid #000000;overflow-wrap:break-word;overflow:hidden;vertical-align:top;"
+              colspan="2">
+              <ol style="list-style-type:decimal;margin-bottom:0;margin-top:0;">
+                <li
+                  style="color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;font-variant:normal;font-weight:400;line-height:1.2;margin-bottom:0pt;margin-top:0pt;text-decoration:none;vertical-align:baseline;white-space:pre;"
+                  dir="ltr" aria-level="1"><span
+                    style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+                      style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">เว้นแต่จะนิยามไว้อย่างอื่นในบันทึกเพิ่มเติมฉบับนี้
+                      คำนิยามใดที่ใช้ในบันทึกเพิ่มเติมฉบับนี้ให้มีความหมายตามที่ระบุไว้ในสัญญากู้&nbsp;</span></span>
+                </li>
+              </ol>
+              <p style="line-height:1.2;margin-bottom:0pt;margin-left:40px;margin-top:0pt;" dir="ltr"><span
+                  style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+                    style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">Unless
+                    otherwise defined in this Addendum, capitalized terms used herein shall have the same meanings given
+                    to such terms in the Loan Agreement.</span></span></p>
+            </td>
+          </tr>
+          <tr style="height:49.2pt;">
+            <td style="border:1px solid #000000;overflow-wrap:break-word;overflow:hidden;vertical-align:top;"
+              colspan="2">
+              <ol style="list-style-type:decimal;margin-bottom:0;margin-top:0;" start="2">
+                <li
+                  style="color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;font-variant:normal;font-weight:400;line-height:1.2;margin-bottom:0pt;margin-top:0pt;text-decoration:none;vertical-align:baseline;white-space:pre;"
+                  dir="ltr" aria-level="1"><span
+                    style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+                      style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">ผู้กู้ยอมรับและตกลงว่าผู้กู้ตกลงยอมรับ
+                      “วงเงินสินเชื่อประเภทชั่วคราว”
+                      ที่อนุมัติโดยผู้ให้กู้ภายใต้ข้อกำหนดและเงื่อนไขที่กำหนดไว้ในบันทึกเพิ่มเติมฉบับนี้ และโดยการกด
+                      “ตกลง”
+                      ในหน้าเสนอวงเงินสินเชื่อประเภทชั่วคราวที่แสดงบนแพลตฟอร์มช้อปปี้อันถือเป็นการตกลงยอมรับวงเงินสินเชื่อประเภทชั่วคราวโดยผู้กู้ที่สมบูรณ์และมีผลบังคับผูกพันทางกฎหมายเช่นเดียวกันกับการลงลายมือชื่อด้วยผู้กู้เองในเอกสาร</span></span>
+                </li>
+              </ol>
+              <p style="line-height:1.2;margin-bottom:0pt;margin-left:40px;margin-top:0pt;" dir="ltr"><span
+                  style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+                    style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">The
+                    Borrower accepts and agrees to the “Temporary Credit Limit” as granted by the Lender under the terms
+                    and conditions set forth herein. By clicking “OK” on the Temporary Credit Limit offering page
+                    provided on Shopee Platform, it shall be deemed as the acceptance and agreement to the Temporary
+                    Credit Limit granted to the Borrower and shall have the same force and legal effect as a manually or
+                    a paper-based executed signature.&nbsp;&nbsp;</span></span></p>
+            </td>
+          </tr>
+          <tr style="height:16.25pt;">
+            <td style="border:1px solid #000000;overflow-wrap:break-word;overflow:hidden;vertical-align:top;"
+              colspan="2">
+              <ol style="list-style-type:decimal;margin-bottom:0;margin-top:0;" start="3">
+                <li
+                  style="color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;font-variant:normal;font-weight:400;line-height:1.2;margin-bottom:0pt;margin-top:0pt;text-decoration:none;vertical-align:baseline;white-space:pre;"
+                  dir="ltr" aria-level="1"><span
+                    style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+                      style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">ผู้กู้รับรู้และตกลงว่าผู้กู้ต้องรับผิดชอบค่าใช้จ่ายใดๆ
+                      ทั้งหมด ซึ่งรวมถึงค่าอากรแสตมป์และภาษีอื่นใดที่เกิดขึ้นจากวงเงินสินเชื่อประเภทชั่วคราวนี้
+                      (ถ้ามี)</span></span></li>
+              </ol>
+              <p style="line-height:1.2;margin-bottom:0pt;margin-left:40px;margin-top:0pt;" dir="ltr"><span
+                  style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+                    style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">The
+                    Borrower acknowledges and agrees that Borrower shall bear all costs and expenses, including stamp
+                    duties and applicable taxes arising from the Temporary Credit Limit (if any).</span></span></p>
+            </td>
+          </tr>
+          <tr style="height:16.2pt;">
+            <td style="border:1px solid #000000;overflow-wrap:break-word;overflow:hidden;vertical-align:top;"
+              colspan="2">
+              <ol style="list-style-type:decimal;margin-bottom:0;margin-top:0;" start="4">
+                <li
+                  style="color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;font-variant:normal;font-weight:400;line-height:1.2;margin-bottom:0pt;margin-top:0pt;text-decoration:none;vertical-align:baseline;white-space:pre;"
+                  dir="ltr" aria-level="1"><span
+                    style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+                      style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">เว้นแต่จะกำหนดไว้เป็นอย่างอื่นภายใต้บันทึกเพิ่มเติมฉบับนี้
+                      ข้อกำหนดและเงื่อนไขใดๆ
+                      ทั้งหมดของสัญญากู้รวมถึงเอกสารสินเชื่อที่เกี่ยวข้องของสัญญากู้ที่ได้ทำขึ้นก่อนบันทึกเพิ่มเติมฉบับนี้ยังคงมีผลผูกพันระหว่างผู้กู้และผู้ให้กู้ตามกฎหมายโดยสมบูรณ์</span></span>
+                </li>
+              </ol>
+              <p style="line-height:1.2;margin-bottom:0pt;margin-left:40px;margin-top:0pt;" dir="ltr"><span
+                  style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+                    style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">Unless
+                    otherwise stated in this Addendum, any and all of the other terms and conditions of the Loan
+                    Agreement, including any related Loan Documents executed before the date of this Addendum, shall
+                    remain valid and effectively binding on the Borrower and the Lender.</span></span></p>
+            </td>
+          </tr>
+          <tr style="height:0pt;">
+            <td style="border:1px solid #000000;overflow-wrap:break-word;overflow:hidden;vertical-align:top;"
+              colspan="2">
+              <ol style="list-style-type:decimal;margin-bottom:0;margin-top:0;" start="5">
+                <li
+                  style="color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;font-variant:normal;font-weight:400;line-height:1.2;margin-bottom:0pt;margin-top:0pt;text-decoration:none;vertical-align:baseline;white-space:pre;"
+                  dir="ltr" aria-level="1"><span
+                    style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+                      style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">บันทึกเพิ่มเติมฉบับนี้มีผลตั้งแต่วันที่ระบุข้างต้นของบันทึกเพิ่มเติมและให้ถือเป็นส่วนหนึ่งของสัญญากู้
+                      หากข้อกำหนดใดที่ระบุไว้ในบันทึกเพิ่มเติมฉบับนี้ขัดหรือแย้งกับข้อกำหนดที่ระบุไว้ในสัญญากู้
+                      ให้ถือตามข้อกำหนดที่ระบุไว้ในบันทึกเพิ่มเติมฉบับนี้เป็นหลัก</span></span></li>
+              </ol>
+              <p style="line-height:1.2;margin-bottom:0pt;margin-left:40px;margin-top:0pt;" dir="ltr"><span
+                  style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+                    style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">This
+                    Addendum shall become effective on the date of this Addendum as first written above and shall form
+                    part of the Loan Agreement. If any provision in this Addendum is inconsistent with the provisions in
+                    the Loan Agreement, the provision in this Addendum shall prevail in all respects.</span></span></p>
+            </td>
+          </tr>
+          <tr style="height:0pt;">
+            <td style="border:1px solid #000000;overflow-wrap:break-word;overflow:hidden;vertical-align:top;"
+              colspan="2">
+              <ol style="list-style-type:decimal;margin-bottom:0;margin-top:0;" start="6">
+                <li
+                  style="color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;font-variant:normal;font-weight:400;line-height:1.2;margin-bottom:0pt;margin-top:0pt;text-decoration:none;vertical-align:baseline;white-space:pre;"
+                  dir="ltr" aria-level="1"><span
+                    style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+                      style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">ผู้กู้ได้อ่าน
+                      เข้าใจและยอมรับการเปลี่ยนแปลงข้อกำหนดและเงื่อนไขตามที่กำหนดไว้ในบันทึกเพิ่มเติมฉบับนี้
+                      และผู้กู้รับทราบว่าบันทึกเพิ่มเติมฉบับนี้จัดทำในรูปแบบอิเล็กทรอนิกส์และผู้ให้กู้ได้ส่งมอบคู่ฉบับให้แก่ผู้กู้ไว้เป็นหลักฐานแล้วผ่านแพลตฟอร์ม</span></span><br><span
+                    style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+                      style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">ช้อปปี้ซึ่งสามารถเข้าถึงเพื่อดูได้</span></span>
+                </li>
+              </ol>
+              <p style="line-height:1.2;margin-bottom:0pt;margin-left:40px;margin-top:0pt;" dir="ltr"><span
+                  style="background-color:transparent;color:#000000;font-family:&quot;Times New Roman&quot;, Times, serif;font-size:16px;"><span
+                    style="font-variant:normal;font-weight:400;text-decoration:none;vertical-align:baseline;">The
+                    Borrower has read, understood and accepted the terms and conditions set forth in this Addendum and
+                    accepts that this Addendum is made in the electronic form and the Lender has delivered the
+                    counterpart to the Borrower as evidence through and accessible via Shopee Platform.</span></span>
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </figure>
+  </div>
+  <p><span
+      style="color:hsl(0,0%,0%);font-family:&quot;Times New Roman&quot;, Times, serif;font-size:14px;">TH_SPLDGL_ENTH_TempIncreaseInstant_202411_v01</span>
+  </p>
+</body>
+
+</html>
